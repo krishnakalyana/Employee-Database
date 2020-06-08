@@ -1,0 +1,16 @@
+<%- include('partials/header')-%>
+    <div class="container mt-5">
+        <form action="/employee/new" method="POST">
+            <div class="form-group">
+                <label for="example"> Enter Name</label>
+                <input class="form-control"type="text" name="name" id="">
+                <label for="designation">Enter Designation</label>
+                <input class="form-control"type="text" name="designation" id="">
+                <label for="salary">Enter Salary</label>
+                <input class="form-control" type="text" name="salary" id="">
+                <button class="btn btn-dark btn-block mt-3">Add to Database</button>    
+            </div>
+            
+        </form>
+    </div>
+<%- include('partials/footer')-%>

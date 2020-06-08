@@ -1,0 +1,36 @@
+<%-include('partials/header')-%>
+<div class="container mt-5">
+    <h3>Search Here</h3>
+</div>
+<div class="container mt-3">
+    <form class="form-group" action="/employee" method="GET">
+        <input class="form-control" type="search" name="name">
+        <button class="btn btn-success btn-block mt-2">Search Employee</button>
+    </form>
+</div>
+<% if(employee) { %>
+<div class="container mt-5 justify-center">
+    <h3>Search Results</h3>
+</div>
+<div class="container mt-3">
+    <table class="table table-bordered" width="100%" cellspacing="0" id="seTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= employee.name %></td>
+                <td><%=employee.designation %></td>
+                <td><%=employee.salary %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<% } else if(employee!=""){%>
+    <div class="container alert alert-danger">Employee with this name does not exist.</div>
+<% } %>
+<%-include('partials/footer') -%>
